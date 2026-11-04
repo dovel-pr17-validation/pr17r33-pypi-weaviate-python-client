@@ -775,7 +775,7 @@ class NearVector:
         """Define a many-vectors query to be used within a near vector search, i.e. multiple vectors over a single-vector space."""
         if len(vectors) > 0 and len(vectors[0]) > 0:
             try:
-                len(cast(Sequence[TwoDimensionalVectorType], vectors)[0][0])
+                _ = len(cast(Sequence[TwoDimensionalVectorType], vectors)[0][0])
                 dimensionality: Literal["1D", "2D"] = "2D"
             except TypeError:
                 dimensionality = "1D"
